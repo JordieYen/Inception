@@ -1,27 +1,28 @@
 version: '3'
 
 services:
-    # nginx:
-    #   image: nginx:latest
-    #   container_name: nginx_container
-    #   build:
-    #     context: ./requirements/nginx
-    #   ports: 
-    #    - "443:443"
+    nginx:
+      image: nginx:latest
+      container_name: nginx_container
+      build:
+        context: ./requirements/nginx
+      ports: 
+       - "443:443"
 
-    # mariadb:
-    #   image: mariadb:latest
-    #   container_name: db_container
-    #   build:
-    #     context: ./requirements/mariadb
-    #   env_file: .env
-    #   expose:
-    #    - "3306"
+    mariadb:
+      image: mariadb:latest
+      container_name: db_container
+      build:
+        context: ./requirements/mariadb
+      env_file: .env
+      expose:
+       - "3306"
 
     wordpress:
       image: wordpress:latest
       container_name: wordpress_container
+      build:
+        context: ./requirements/wordpress
+      env_file: .env
       expose:
         - "9000"
-      # volumes:
-      #   - wordpress:/var/www/html

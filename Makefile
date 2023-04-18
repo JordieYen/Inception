@@ -14,4 +14,5 @@ clean:
 	docker-compose -f $(COMPOSE_PATH) down
 
 fclean:
+	docker-compose -f $(COMPOSE_PATH) down
 	docker system prune -a

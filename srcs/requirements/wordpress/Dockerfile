@@ -1,7 +1,8 @@
 FROM	debian:buster
 
-WORKDIR /var/www/html
+RUN		apt-get update && apt-get install -y wget unzip
 
-RUN		wget https://wordpress.org/latest.zip 
-RUN		unzip latest.zip
-RUN		mv wordpress jking-ye.com
+COPY 	tools tools
+RUN 	chmod 777 tools/wordpress-setup.sh
+
+CMD		["./tools/wordpress-setup.sh"]

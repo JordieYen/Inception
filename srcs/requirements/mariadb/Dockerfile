@@ -6,4 +6,3 @@ COPY 	tools tools
 RUN 	chmod 777 tools/run.sh
 
 CMD		["./tools/run.sh"]
-# CMD		["mysqld_safe"]
