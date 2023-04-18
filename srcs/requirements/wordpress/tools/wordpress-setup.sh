@@ -11,7 +11,8 @@ rm latest.zip
 cd jking-ye.com
 sed 's/database_name_here/'$MYSQL_DATABASE_NAME'/g' wp-config-sample.php | \
 sed 's/username_here/'$MYSQL_USER'/g' | \
-sed 's/password_here/'$MYSQL_PASSWORD'/g' > wp-config.php
+sed 's/password_here/'$MYSQL_PASSWORD'/g' | \
+sed 's/localhost/'db_container'/g' > wp-config.php
 
 echo "done"
 
