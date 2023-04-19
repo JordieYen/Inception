@@ -2,8 +2,11 @@
 
 echo "running bash file"
 
-cd var && mkdir www
-cd www && mkdir html && cd html
+cd var
+mkdir www
+cd www
+mkdir html
+cd html
 wget https://wordpress.org/latest.zip 
 unzip latest.zip
 mv wordpress jking-ye.com
