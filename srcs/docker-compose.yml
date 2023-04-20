@@ -7,7 +7,7 @@ services:
       build:
         context: ./requirements/nginx
       volumes:
-        - /home/jordie/workspace/inception/data/wordpress:/var/www/html
+        - ${PWD}/data/wordpress:/var/www/html
       ports: 
        - "443:443"
 
@@ -18,7 +18,7 @@ services:
         context: ./requirements/mariadb
       env_file: .env
       volumes:
-        - /home/jordie/workspace/inception/data/mariadb:/var/lib/mysql
+        - ${PWD}/data/mariadb:/var/lib/mysql
       expose:
        - "3306"
 
@@ -29,6 +29,6 @@ services:
         context: ./requirements/wordpress
       env_file: .env
       volumes:
-        - /home/jordie/workspace/inception/data/wordpress:/var/www/html
+        - ${PWD}/data/wordpress:/var/www/html
       expose:
         - "9000"
