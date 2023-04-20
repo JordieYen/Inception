@@ -6,6 +6,8 @@ services:
       container_name: nginx_container
       build:
         context: ./requirements/nginx
+      volumes:
+        - /home/jordie/workspace/inception/data/wordpress:/var/www/html
       ports: 
        - "443:443"
 
