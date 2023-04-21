@@ -16,8 +16,4 @@ clean:
 fclean:
 	docker-compose -f $(COMPOSE_PATH) down
 	docker system prune -a
-
-sclean:
-	docker-compose -f $(COMPOSE_PATH) down
-	docker system prune -a
 	rm -rf data
