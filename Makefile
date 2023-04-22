@@ -6,6 +6,10 @@ all:
 print:
 	docker-compose -f $(COMPOSE_PATH) up --build
 
+check:
+	@docker ps
+	@docker image ls
+
 re:
 	docker-compose -f $(COMPOSE_PATH) down
 	docker-compose -f $(COMPOSE_PATH) up --build -d
