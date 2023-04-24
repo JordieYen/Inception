@@ -13,7 +13,7 @@ else
   cd jking-ye.com
   wp core download --allow-root
   wp config create --dbname=$MYSQL_DATABASE_NAME --dbuser=$MYSQL_ADMIN_USER --dbpass=$MYSQL_ADMIN_PASSWORD --dbhost=db_container --allow-root
-  wp core install --url=jking-ye.42.fr --title=Jking-ye_Wordpress --admin_user=$MYSQL_ADMIN_USER --admin_password=$MYSQL_ADMIN_PASSWORD --admin_email=$MYSQL_ADMIN_USER@example.com --allow-root
+  wp core install --url=localhost --title=Jking-ye_Wordpress --admin_user=$MYSQL_ADMIN_USER --admin_password=$MYSQL_ADMIN_PASSWORD --admin_email=$MYSQL_ADMIN_USER@example.com --allow-root
   wp user create jking-ye jking-ye@example.com --role=subscriber --allow-root
 fi
 
