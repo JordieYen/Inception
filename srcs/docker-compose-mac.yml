@@ -2,7 +2,7 @@ version: '3'
 
 services:
     nginx:
-      image: nginx:latest
+      image: nginx
       container_name: nginx_container
       build:
         context: ./requirements/nginx
@@ -13,7 +13,7 @@ services:
        - "443:443"
 
     mariadb:
-      image: mariadb:latest
+      image: mariadb
       container_name: db_container
       build:
         context: ./requirements/mariadb
@@ -25,7 +25,7 @@ services:
        - "3306"
 
     wordpress:
-      image: wordpress:latest
+      image: wordpress
       container_name: wordpress_container
       build:
         context: ./requirements/wordpress-mac
