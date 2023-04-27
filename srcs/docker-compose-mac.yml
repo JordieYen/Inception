@@ -7,7 +7,7 @@ services:
       build:
         context: ./requirements/nginx
       volumes:
-        - ${PWD}/data/wordpress:/var/www/html
+        -wordpress_volume:/var/www/html
       restart: always
       ports: 
        - "443:443"
@@ -19,7 +19,7 @@ services:
         context: ./requirements/mariadb
       env_file: .env
       volumes:
-        - ${PWD}/data/mariadb:/var/lib/mysql
+        - mariadb_volume:/var/lib/mysql
       restart: always
       expose:
        - "3306"
@@ -31,7 +31,21 @@ services:
         context: ./requirements/wordpress-mac
       env_file: .env
       volumes:
-        - ${PWD}/data/wordpress:/var/www/html
+        - wordpress_volume:/var/www/html
       restart: always
       expose:
         - "9000"
+
+volumes:
+  mariadb_volume:
+      driver: local
+      driver_opts:
+        type: none
+        device: ${HOME}/data/mariadb
+        o: bind
+  wordpress_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${HOME}/data/wordpress
+      o: bind

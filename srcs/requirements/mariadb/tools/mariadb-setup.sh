@@ -2,9 +2,9 @@
 
 if [ -d "/var/lib/mysql" ]
 then
-	if [ "$(ls -A /var/lib/mysql)" ]; then
-    	echo "/var/lib/mysql filled"
-	else
+	# if [ "$(ls -A /var/lib/mysql)" ]; then
+    # 	echo "/var/lib/mysql filled"
+	# else
     	echo "USE mysql;
 		FLUSH PRIVILEGES;
 		ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
@@ -19,7 +19,7 @@ then
 
 		mysql_install_db --user=mysql > /dev/null
 		mysqld --user=mysql --bootstrap < tools/change_pword.txt
-	fi
+	# fi
 else
 	echo "/var/lib/mysql not found"
 fi

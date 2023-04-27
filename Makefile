@@ -24,9 +24,11 @@ clean:
 fclean:
 	docker-compose -f $(COMPOSE_PATH) down
 	docker system prune -a
-	rm -rf data
+	rm -rf /home/jordie/data
+	docker volume rm `docker volume ls -q`
 
 macclean:
-	docker-compose -f $(COMPOSE_PATH) down
+	docker-compose -f $(MAC_COMPOSE_PATH) down
 	docker system prune -a
-	rm -rf data
+	rm -rf $(HOME)/data
+	docker volume rm `docker volume ls -q`
