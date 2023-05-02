@@ -5,6 +5,9 @@ all:
 	docker-compose -f $(COMPOSE_PATH) up --build -d
 
 mac:
+	mkdir $(HOME)/data
+	mkdir $(HOME)/data/mariadb
+	mkdir $(HOME)/data/wordpress
 	docker-compose -f $(MAC_COMPOSE_PATH) up --build -d
 
 print:
