@@ -20,7 +20,7 @@ Ensure you have Docker and Docker Compose installed on your system:
 2. Navigate to the project directory:
 
     ```bash
-    cd docker-wordpress
+    cd Inception
     ```
 
 3. Customize the configuration (optional):
